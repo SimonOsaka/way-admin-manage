@@ -111,6 +111,27 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
+    path: '/shop',
+    component: Layout,
+    redirect: '/shop/index',
+    alwaysShow: true,
+    meta: {
+      title: 'shop',
+      icon: 'shopping'
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/shop/index'),
+        name: 'shopIndex',
+        meta: {
+          title: 'shopIndex'
+        }
+      }
+    ]
+  },
+
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/index',
