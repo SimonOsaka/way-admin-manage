@@ -127,6 +127,14 @@ export const asyncRouterMap = [
         meta: {
           title: 'shopIndex'
         }
+      },
+      {
+        path: 'commodity',
+        component: () => import('@/views/commodity/index'),
+        name: 'commodityIndex',
+        meta: {
+          title: 'commodityIndex'
+        }
       }
     ]
   },

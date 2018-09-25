@@ -63,7 +63,8 @@ export default {
     i18n: '国际化',
     externalLink: '外链',
     shop: '商家平台管理',
-    shopIndex: '商家管理'
+    shopIndex: '商家管理',
+    commodityIndex: '商品管理'
   },
   navbar: {
     logOut: '退出登录',
