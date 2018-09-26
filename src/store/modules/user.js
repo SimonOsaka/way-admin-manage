@@ -60,14 +60,11 @@ const user = {
       return new Promise((resolve, reject) => {
         loginByUsername(username, userInfo.password)
           .then(response => {
-            console.log('..here1..', response)
             const data = response.data
             commit('SET_TOKEN', data.token)
             setToken(response.data.token)
-            console.log('..here2..', response)
             commit('SET_USERLOGINID', data.userLoginId)
             setUserLoginId(response.data.userLoginId)
-            console.log('..here3..', response)
             resolve()
           })
           .catch(error => {
