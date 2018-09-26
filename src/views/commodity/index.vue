@@ -12,6 +12,7 @@
           <img :src="scope.row['imgUrl']" class="shop_logo">
         </template>
       </el-table-column>
+      <el-table-column prop="id" label="商品 ID" width="80"/>
       <el-table-column prop="name" label="商品名称"/>
       <el-table-column prop="price" label="商品价格" width="100"/>
       <el-table-column align="center" label="商品状态" width="100" class-name="small-padding fixed-width">

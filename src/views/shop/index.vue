@@ -16,9 +16,6 @@
       <el-table-column type="expand">
         <template slot-scope="scope">
           <el-form label-position="left" inline class="demo-table-expand">
-            <el-form-item label="商家 ID">
-              <span>{{ scope.row.id }}</span>
-            </el-form-item>
             <el-form-item label="商家信息">
               <span>{{ scope.row.shopInfo }}</span>
             </el-form-item>
@@ -36,6 +33,7 @@
           <img :src="scope.row['shopLogoUrl']" class="shop_logo">
         </template>
       </el-table-column>
+      <el-table-column prop="id" label="商家 ID" />
       <el-table-column prop="shopName" label="商家名称" width="180" />
       <el-table-column v-for="(shop, i) in formThead" :key="shop.prop.concat(i)" :label="shop.label">
         <template slot-scope="scope">
