@@ -66,7 +66,9 @@ export default {
     shopIndex: '商家管理',
     commodityIndex: '商品管理',
     discount: '优惠管理',
-    discountIndex: '优惠信息管理'
+    discountIndex: '优惠信息管理',
+    user: '用户管理',
+    userLoginIndex: '注册用户管理'
   },
   navbar: {
     logOut: '退出登录',
@@ -175,5 +177,11 @@ export default {
   discount: {
     search: '查询',
     discountIdPlaceHolder: '请输入优惠 ID'
+  },
+  user: {
+    search: '查询',
+    userIdPlaceHolder: '请输入用户 ID',
+    loginTelPlaceHolder: '请输入用户手机',
+    loginNamePlaceHolder: '请输入用户名称'
   }
 }
