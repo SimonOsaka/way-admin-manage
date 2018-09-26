@@ -64,7 +64,9 @@ export default {
     externalLink: '外链',
     shop: '商家平台管理',
     shopIndex: '商家管理',
-    commodityIndex: '商品管理'
+    commodityIndex: '商品管理',
+    discount: '优惠管理',
+    discountIndex: '优惠信息管理'
   },
   navbar: {
     logOut: '退出登录',
@@ -165,5 +167,13 @@ export default {
   shop: {
     search: '查询',
     shopNamePlaceholder: '请输入商家名称'
+  },
+  commodity: {
+    search: '查询',
+    shopIdPlaceHolder: '请输入商家 ID'
+  },
+  discount: {
+    search: '查询',
+    discountIdPlaceHolder: '请输入优惠 ID'
   }
 }

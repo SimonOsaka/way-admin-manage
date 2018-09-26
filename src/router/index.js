@@ -140,6 +140,27 @@ export const asyncRouterMap = [
   },
 
   {
+    path: '/discount',
+    component: Layout,
+    redirect: '/discount/index',
+    alwaysShow: true,
+    meta: {
+      title: 'discount',
+      icon: 'shopping'
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/discount/index'),
+        name: 'discountIndex',
+        meta: {
+          title: 'discountIndex'
+        }
+      }
+    ]
+  },
+
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/index',
