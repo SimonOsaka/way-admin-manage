@@ -48,7 +48,7 @@
       <el-table-column align="center" label="操作" width="180" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button v-if="scope.row.isDeleted === 2" size="mini" type="primary" @click="handleModifyStatus(scope.row, 5)">通过</el-button>
-          <el-button v-if="scope.row.isDeleted === 2" size="mini" type="warning" @click="handleModifyStatus(scope.row, 3)">驳回</el-button>
+          <el-button v-if="scope.row.isDeleted === 2 || scope.row.isDeleted === 4" size="mini" type="warning" @click="handleModifyStatus(scope.row, 3)">驳回</el-button>
           <el-button v-if="scope.row.isDeleted === 0" size="mini" type="info" @click="handleModifyStatus(scope.row, 4)">下线</el-button>
           <el-button v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0" size="mini" type="danger" @click="handleModifyStatus(scope.row, 1)">删除</el-button>
         </template>
