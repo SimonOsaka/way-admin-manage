@@ -34,11 +34,6 @@
               {{ $t('navbar.dashboard') }}
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">
-            <el-dropdown-item>
-              {{ $t('navbar.github') }}
-            </el-dropdown-item>
-          </a>
           <el-dropdown-item divided>
             <span style="display:block;" @click="logout">{{ $t('navbar.logOut') }}</span>
           </el-dropdown-item>
@@ -100,7 +95,7 @@ export default {
     float: left;
     padding: 0 10px;
   }
-  .breadcrumb-container{
+  .breadcrumb-container {
     float: left;
   }
   .errLog-container {
@@ -110,8 +105,8 @@ export default {
   .right-menu {
     float: right;
     height: 100%;
-    &:focus{
-     outline: none;
+    &:focus {
+      outline: none;
     }
     .right-menu-item {
       display: inline-block;
@@ -120,7 +115,7 @@ export default {
     .screenfull {
       height: 20px;
     }
-    .international{
+    .international {
       vertical-align: top;
     }
     .theme-switch {
