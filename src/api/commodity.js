@@ -15,3 +15,11 @@ export function modifyCommodityStatus(params) {
     data: params
   })
 }
+
+export function queryCommodityLogList(params) {
+  return request({
+    url: '/mp/commodity/log/list',
+    method: 'post',
+    data: params
+  })
+}

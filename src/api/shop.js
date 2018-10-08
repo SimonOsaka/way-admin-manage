@@ -87,3 +87,11 @@ export function modifyShopStatus(params) {
     data: params
   })
 }
+
+export function queryShopLogList(params) {
+  return request({
+    url: '/mp/shop/log/list',
+    method: 'post',
+    data: params
+  })
+}

@@ -25,12 +25,16 @@
             <el-form-item label="商家子分类">
               <span>{{ scope.row.wayShopCateLeaf.cateName }}</span>
             </el-form-item>
+            <el-form-item label="商家资质">
+              <el-button v-if="scope.row['wayShopQualification']" type="text" @click="handleQualify(scope.row['wayShopQualification'])">查看资质</el-button>
+              <span v-else style="color: red;">无资质</span>
+            </el-form-item>
           </el-form>
         </template>
       </el-table-column>
       <el-table-column label="商家logo" width="80">
         <template slot-scope="scope">
-          <img :src="scope.row['shopLogoUrl']" class="shop_logo">
+          <image-preview :src="scope.row['shopLogoUrl']" :custom-style="logoStyle"/>
         </template>
       </el-table-column>
       <el-table-column prop="id" label="商家 ID" />
@@ -47,13 +51,66 @@
       </el-table-column>
       <el-table-column align="center" label="操作" width="180" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button v-if="scope.row.isDeleted === 2" size="mini" type="primary" @click="handleModifyStatus(scope.row, 5)">通过</el-button>
-          <el-button v-if="scope.row.isDeleted === 2 || scope.row.isDeleted === 4" size="mini" type="warning" @click="handleModifyStatus(scope.row, 3)">驳回</el-button>
-          <el-button v-if="scope.row.isDeleted === 0" size="mini" type="info" @click="handleModifyStatus(scope.row, 4)">下线</el-button>
-          <el-button v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0" size="mini" type="danger" @click="handleModifyStatus(scope.row, 1)">删除</el-button>
+          <el-button-group>
+            <el-button v-if="scope.row.isDeleted === 2" size="mini" type="primary" @click="handleModifyStatus(scope.row, 5)">通过</el-button>
+            <el-button v-if="scope.row.isDeleted === 2 || scope.row.isDeleted === 4" size="mini" type="warning" @click="handleReject(scope.row, 3)">驳回</el-button>
+            <el-button v-if="scope.row.isDeleted === 0" size="mini" type="info" @click="handleModifyStatus(scope.row, 4)">下线</el-button>
+            <el-button v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0" size="mini" type="danger" @click="handleModifyStatus(scope.row, 1)">删除</el-button>
+            <el-button size="mini" @click="handleShopLogDetail(scope.row)">日志</el-button>
+          </el-button-group>
         </template>
       </el-table-column>
     </el-table>
+
+    <el-dialog :visible.sync="shopLog.dialogShopLogVisable" title="日志列表" >
+      <el-table v-loading="shopLog.logLoading" :data="shopLog.logList" :max-height="400">
+        <el-table-column width="80" align="left" property="typeDesc" label="类型"/>
+        <el-table-column width="50" align="left" property="sourceDesc" label="平台"/>
+        <el-table-column width="300" align="left" property="content" label="内容"/>
+        <el-table-column width="150" align="left" property="createTime" label="日期"/>
+      </el-table>
+    </el-dialog >
+
+    <el-dialog :visible.sync="qualification.dialogVisible" title="商家资质">
+      <div style="max-height: 400px; overflow-y: auto;">
+        <el-row>
+          <el-col :span="8">
+            <label>身份证正面</label><image-preview :src="qualification.idcardFrontUrl"/>
+          </el-col>
+          <el-col :span="8">
+            <label>身份证反面</label><image-preview :src="qualification.idcardBackUrl"/>
+          </el-col>
+          <el-col :span="8">
+            <label>手持身份证</label><image-preview :src="qualification.idcardHandUrl"/>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="8">
+            <label>商家门面照片</label><image-preview :src="qualification.shopOutsideUrl"/>
+          </el-col>
+          <el-col :span="8">
+            <label>商家内部照片</label><image-preview :src="qualification.shopInsideUrl"/>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="8">
+            <label style="display:block;">商家资质</label><image-preview :src="qualification.businessLicenseUrl"/>
+          </el-col>
+          <el-col :span="8"/>
+          <el-col :span="8"/>
+        </el-row>
+        <el-row v-if="qualification.other1Url">
+          <el-col :span="24">
+            <label style="display:block;">其它资料</label>
+            <image-preview v-if="qualification.other1Url" :src="qualification.other1Url"/>
+            <image-preview v-if="qualification.other2Url" :src="qualification.other2Url"/>
+            <image-preview v-if="qualification.other3Url" :src="qualification.other3Url"/>
+            <image-preview v-if="qualification.other4Url" :src="qualification.other4Url"/>
+            <image-preview v-if="qualification.other5Url" :src="qualification.other5Url"/>
+          </el-col>
+        </el-row>
+      </div>
+    </el-dialog>
 
     <div class="pagination-container">
       <el-pagination :current-page="listQuery.pageNum" :page-sizes="[10,20,30,50]" :page-size="listQuery.pageSize" :total="total" background layout="total, sizes, prev, pager, next, jumper" @size-change="handleSizeChange" @current-change="handleCurrentChange" />
@@ -62,12 +119,16 @@
 </template>
 
 <script>
-import { queryShopList, modifyShopStatus } from '@/api/shop'
+import { queryShopList, modifyShopStatus, queryShopLogList } from '@/api/shop'
 import waves from '@/directive/waves' // 水波纹指令
+import imagePreview from '@/components/ImagePreview/imagePreview'
 const defaultFormThead = ['shopAddress', 'shopTel', 'shopBusinessTime']
 
 export default {
   name: 'ShopList',
+  components: {
+    imagePreview
+  },
   directives: {
     waves
   },
@@ -94,7 +155,27 @@ export default {
         { label: '商家地址', prop: 'shopAddress' },
         { label: '商家电话', prop: 'shopTel' },
         { label: '商家营业时间', prop: 'shopBusinessTime' }
-      ] // 默认表头 Default header
+      ], // 默认表头 Default header
+      shopLog: {
+        logLoading: false,
+        logList: [],
+        dialogShopLogVisable: false
+      },
+      qualification: {
+        dialogVisible: false,
+        idcardFrontUrl: '',
+        idcardBackUrl: '',
+        idcardHandUrl: '',
+        shopInsideUrl: '',
+        shopOutsideUrl: '',
+        businessLicenseUrl: '',
+        other1Url: '',
+        other2Url: '',
+        other3Url: '',
+        other4Url: '',
+        other5Url: ''
+      },
+      logoStyle: 'width: 64px; height: 64px; border: none;'
     }
   },
   watch: {
@@ -163,6 +244,63 @@ export default {
           message: '已取消执行'
         })
       })
+    },
+    handleReject(row, status) {
+      this.$prompt('请输入驳回原因', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputValidator: (value) => {
+          console.log(value)
+          if (value === '') {
+            return '请输入驳回原因'
+          } else if (value < 1 || value > 100) {
+            return '驳回原因在1-100字之间'
+          }
+          return true
+        }
+      }).then(({ value }) => {
+        modifyShopStatus({ id: row['id'], shopStatus: status, rejectContent: value }).then(response => {
+          const index = this.list.indexOf(row)
+          this.list[index].isDeleted = status
+          this.$message({
+            type: 'success',
+            message: '驳回成功!'
+          })
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消驳回'
+        })
+      })
+    },
+    handleShopLogDetail(row) {
+      this.shopLog.dialogShopLogVisable = true
+      this.logLoading = true
+      queryShopLogList({ shopId: row['id'] }).then(response => {
+        this.shopLog.logList = response.data.shopLogBoList
+
+        this.shopLog.logLoading = false
+      }, error => {
+        this.shopLog.logList = []
+        this.shopLog.logLoading = false
+        console.error(error)
+      })
+    },
+    handleQualify(q) {
+      console.log(q)
+      this.qualification.idcardFrontUrl = q.idcardFrontImgUrl
+      this.qualification.idcardBackUrl = q.idcardBackImgUrl
+      this.qualification.idcardHandUrl = q.idcardHandImgUrl
+      this.qualification.shopInsideUrl = q.shopInsideImgUrl
+      this.qualification.shopOutsideUrl = q.shopOutsideImgUrl
+      this.qualification.businessLicenseUrl = q.businessLicenseImgUrl
+      this.qualification.other1Url = q.other1ImgUrl
+      this.qualification.other2Url = q.other2ImgUrl
+      this.qualification.other3Url = q.other3ImgUrl
+      this.qualification.other4Url = q.other4ImgUrl
+      this.qualification.other5Url = q.other5ImgUrl
+      this.qualification.dialogVisible = true
     }
   }
 }
