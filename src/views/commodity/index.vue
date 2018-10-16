@@ -2,6 +2,7 @@
   <div class="app-container">
 
     <div class="filter-container">
+      <el-input :placeholder="$t('commodity.commodityIdPlaceHolder')" v-model="listQuery.id" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
       <el-input :placeholder="$t('commodity.shopIdPlaceHolder')" v-model="listQuery.shopId" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('commodity.search') }}</el-button>
     </div>
@@ -22,11 +23,13 @@
       </el-table-column>
       <el-table-column align="center" label="操作" width="270" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button v-if="scope.row.isDeleted === 2" size="mini" type="primary" @click="handleModifyStatus(scope.row, 5)">通过</el-button>
-          <el-button v-if="scope.row.isDeleted === 2" size="mini" type="warning" @click="handleReject(scope.row, 3)">驳回</el-button>
-          <el-button v-if="scope.row.isDeleted === 0" size="mini" type="info" @click="handleModifyStatus(scope.row, 4)">下架</el-button>
-          <el-button v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0" size="mini" type="danger" @click="handleModifyStatus(scope.row, 1)">删除</el-button>
-          <el-button size="mini" @click="handleCommodityLogDetail(scope.row)">日志</el-button>
+          <el-button-group>
+            <el-button v-if="scope.row.isDeleted === 2" size="mini" type="primary" @click="handleModifyStatus(scope.row, 5)">通过</el-button>
+            <el-button v-if="scope.row.isDeleted === 2" size="mini" type="warning" @click="handleReject(scope.row, 3)">驳回</el-button>
+            <el-button v-if="scope.row.isDeleted === 0" size="mini" type="info" @click="handleModifyStatus(scope.row, 4)">下架</el-button>
+            <el-button v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0" size="mini" type="danger" @click="handleModifyStatus(scope.row, 1)">删除</el-button>
+            <el-button size="mini" @click="handleCommodityLogDetail(scope.row)">日志</el-button>
+          </el-button-group>
         </template>
       </el-table-column>
     </el-table>
@@ -65,6 +68,7 @@ export default {
       listLoading: false,
       total: null,
       listQuery: {
+        id: '',
         shopId: '',
         pageNum: 1,
         pageSize: 20

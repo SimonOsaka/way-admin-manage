@@ -3,6 +3,7 @@
 
     <div class="filter-container">
       <el-input :placeholder="$t('discount.discountIdPlaceHolder')" v-model="listQuery.discountId" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
+      <el-input :placeholder="$t('discount.commodityIdPlaceHolder')" v-model="listQuery.commodityId" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('discount.search') }}</el-button>
     </div>
 
@@ -14,8 +15,16 @@
       </el-table-column>
       <el-table-column prop="id" label="优惠 ID"/>
       <el-table-column prop="commodityName" label="商品名称"/>
+      <el-table-column prop="limitTimeExpire" label="过期时间" width="160"/>
+      <el-table-column label="商品分类">
+        <template slot-scope="scope">
+          {{ scope.row.commodityCate | discountCommodityCate }}
+        </template>
+      </el-table-column>
       <el-table-column prop="commodityPrice" label="商品价格"/>
-      <el-table-column align="center" label="操作" width="270" class-name="small-padding fixed-width">
+      <el-table-column prop="commodityId" label="商家商品 ID"/>
+      <el-table-column prop="shopPosition" label="商家地址"/>
+      <el-table-column align="center" label="操作" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button v-if="scope.row.isDeleted === 0" size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
         </template>
@@ -44,6 +53,7 @@ export default {
       total: null,
       listQuery: {
         discountId: '',
+        commodityId: '',
         pageNum: 1,
         pageSize: 20
       },

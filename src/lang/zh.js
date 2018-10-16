@@ -168,14 +168,17 @@ export default {
   },
   shop: {
     search: '查询',
+    shopIdPlaceHolder: '请输入商家 ID',
     shopNamePlaceholder: '请输入商家名称'
   },
   commodity: {
     search: '查询',
+    commodityIdPlaceHolder: '请输入商品 ID',
     shopIdPlaceHolder: '请输入商家 ID'
   },
   discount: {
     search: '查询',
+    commodityIdPlaceHolder: '请输入商品 ID',
     discountIdPlaceHolder: '请输入优惠 ID'
   },
   user: {

@@ -1,5 +1,13 @@
 // set function parseTime,formatTime to filter
 export { parseTime, formatTime } from '@/utils'
+const cateMap = {
+  'clothes': '服饰',
+  'drinks': '饮料',
+  'others': '其它',
+  'snacks': '零食',
+  'tools': '工具',
+  'vegetables': '蔬菜'
+}
 
 function pluralize(time, label) {
   if (time === 1) {
@@ -39,4 +47,11 @@ export function numberFormatter(num, digits) {
 
 export function toThousandFilter(num) {
   return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
+}
+
+export function discountCommodityCate(cateKey) {
+  if (!cateMap[cateKey]) {
+    return ''
+  }
+  return cateMap[cateKey]
 }

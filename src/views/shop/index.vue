@@ -2,6 +2,7 @@
   <div class="app-container">
 
     <div class="filter-container">
+      <el-input :placeholder="$t('shop.shopIdPlaceHolder')" v-model="listQuery.id" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
       <el-input :placeholder="$t('shop.shopNamePlaceholder')" v-model="listQuery.shopName" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('shop.search') }}</el-button>
 
@@ -141,7 +142,8 @@ export default {
       listQuery: {
         pageNum: 1,
         pageSize: 20,
-        shopName: undefined
+        shopName: undefined,
+        id: undefined
       },
       shopStatusMap: {},
       tableData: [],
