@@ -120,6 +120,7 @@
 
 <script>
 import { queryShopList, modifyShopStatus, queryShopLogList } from '@/api/shop'
+import { getShopQualification } from '@/api/qualification'
 import waves from '@/directive/waves' // 水波纹指令
 import imagePreview from '@/components/ImagePreview/imagePreview'
 const defaultFormThead = ['shopAddress', 'shopTel', 'shopBusinessTime']
@@ -289,18 +290,25 @@ export default {
     },
     handleQualify(q) {
       console.log(q)
-      this.qualification.idcardFrontUrl = q.idcardFrontImgUrl
-      this.qualification.idcardBackUrl = q.idcardBackImgUrl
-      this.qualification.idcardHandUrl = q.idcardHandImgUrl
-      this.qualification.shopInsideUrl = q.shopInsideImgUrl
-      this.qualification.shopOutsideUrl = q.shopOutsideImgUrl
-      this.qualification.businessLicenseUrl = q.businessLicenseImgUrl
-      this.qualification.other1Url = q.other1ImgUrl
-      this.qualification.other2Url = q.other2ImgUrl
-      this.qualification.other3Url = q.other3ImgUrl
-      this.qualification.other4Url = q.other4ImgUrl
-      this.qualification.other5Url = q.other5ImgUrl
-      this.qualification.dialogVisible = true
+      getShopQualification({ id: q['id'] }).then(response => {
+        const data = response.data
+        if (!data['shopQualificationBo']) {
+          return
+        }
+        const shopQualificationBo = data['shopQualificationBo']
+        this.qualification.idcardFrontUrl = shopQualificationBo.idcardFrontImgUrl
+        this.qualification.idcardBackUrl = shopQualificationBo.idcardBackImgUrl
+        this.qualification.idcardHandUrl = shopQualificationBo.idcardHandImgUrl
+        this.qualification.shopInsideUrl = shopQualificationBo.shopInsideImgUrl
+        this.qualification.shopOutsideUrl = shopQualificationBo.shopOutsideImgUrl
+        this.qualification.businessLicenseUrl = shopQualificationBo.businessLicenseImgUrl
+        this.qualification.other1Url = shopQualificationBo.other1ImgUrl
+        this.qualification.other2Url = shopQualificationBo.other2ImgUrl
+        this.qualification.other3Url = shopQualificationBo.other3ImgUrl
+        this.qualification.other4Url = shopQualificationBo.other4ImgUrl
+        this.qualification.other5Url = shopQualificationBo.other5ImgUrl
+        this.qualification.dialogVisible = true
+      })
     }
   }
 }
