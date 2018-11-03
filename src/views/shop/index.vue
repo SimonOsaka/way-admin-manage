@@ -17,6 +17,9 @@
       <el-table-column type="expand">
         <template slot-scope="scope">
           <el-form label-position="left" inline class="demo-table-expand">
+            <el-form-item label="商家负责人手机号码">
+              <span>{{ scope.row.shopHeadTel }}</span>
+            </el-form-item>
             <el-form-item label="商家信息">
               <span>{{ scope.row.shopInfo }}</span>
             </el-form-item>
