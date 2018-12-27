@@ -1,0 +1,1516 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "e:\\workspace-on_the_way\\mp.jicu.vip",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2018-11-21 15:14:14",
+            "filesum": 249,
+            "codesum": 16174,
+            "commentsum": 603,
+            "blanksum": 950,
+            "filelist": [
+                {
+                    "blank": 5,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "src\\api\\article.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "src\\api\\commodity.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\api\\discount.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "src\\api\\login.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 1,
+                    "filename": "src\\api\\qiniu.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\api\\qualification.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\api\\remoteSearch.js"
+                },
+                {
+                    "blank": 12,
+                    "code": 85,
+                    "comment": 0,
+                    "filename": "src\\api\\shop.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\api\\transaction.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\api\\user.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\App.vue"
+                },
+                {
+                    "filename": "src\\assets\\401_images\\401.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\404_images\\404.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\404_images\\404_cloud.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\custom-theme\\fonts\\element-icons.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\custom-theme\\fonts\\element-icons.woff",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\custom-theme\\index.css"
+                },
+                {
+                    "blank": 6,
+                    "code": 110,
+                    "comment": 0,
+                    "filename": "src\\components\\BackToTop\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "src\\components\\Breadcrumb\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 153,
+                    "comment": 0,
+                    "filename": "src\\components\\Charts\\keyboard.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 222,
+                    "comment": 0,
+                    "filename": "src\\components\\Charts\\lineMarker.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 265,
+                    "comment": 0,
+                    "filename": "src\\components\\Charts\\mixChart.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "src\\components\\Charts\\mixins\\resize.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 149,
+                    "comment": 0,
+                    "filename": "src\\components\\DndList\\index.vue"
+                },
+                {
+                    "blank": 21,
+                    "code": 265,
+                    "comment": 11,
+                    "filename": "src\\components\\Dropzone\\index.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 82,
+                    "comment": 0,
+                    "filename": "src\\components\\ErrorLog\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "src\\components\\GithubCorner\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "src\\components\\Hamburger\\index.vue"
+                },
+                {
+                    "blank": 11,
+                    "code": 1332,
+                    "comment": 99,
+                    "filename": "src\\components\\ImageCropper\\index.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 8,
+                    "filename": "src\\components\\ImageCropper\\utils\\data2blob.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 10,
+                    "filename": "src\\components\\ImageCropper\\utils\\effectRipple.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 230,
+                    "comment": 0,
+                    "filename": "src\\components\\ImageCropper\\utils\\language.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\components\\ImageCropper\\utils\\mimes.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "src\\components\\ImagePreview\\galleryPreview.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "src\\components\\ImagePreview\\imagePreview.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 67,
+                    "comment": 1,
+                    "filename": "src\\components\\JsonEditor\\index.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 84,
+                    "comment": 0,
+                    "filename": "src\\components\\Kanban\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "src\\components\\LangSelect\\index.vue"
+                },
+                {
+                    "blank": 9,
+                    "code": 113,
+                    "comment": 1,
+                    "filename": "src\\components\\MarkdownEditor\\index.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 335,
+                    "comment": 15,
+                    "filename": "src\\components\\MDinput\\index.vue"
+                },
+                {
+                    "blank": 12,
+                    "code": 128,
+                    "comment": 0,
+                    "filename": "src\\components\\PanThumb\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 75,
+                    "comment": 0,
+                    "filename": "src\\components\\Screenfull\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 51,
+                    "comment": 3,
+                    "filename": "src\\components\\ScrollPane\\index.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 98,
+                    "comment": 1,
+                    "filename": "src\\components\\Share\\dropdownMenu.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 48,
+                    "comment": 1,
+                    "filename": "src\\components\\SizeSelect\\index.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 83,
+                    "comment": 0,
+                    "filename": "src\\components\\Sticky\\index.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "src\\components\\SvgIcon\\index.vue"
+                },
+                {
+                    "blank": 12,
+                    "code": 100,
+                    "comment": 1,
+                    "filename": "src\\components\\TextHoverEffect\\Mallki.vue"
+                },
+                {
+                    "blank": 20,
+                    "code": 124,
+                    "comment": 5,
+                    "filename": "src\\components\\ThemePicker\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 99,
+                    "comment": 1,
+                    "filename": "src\\components\\Tinymce\\components\\editorImage.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 167,
+                    "comment": 35,
+                    "filename": "src\\components\\Tinymce\\index.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 2,
+                    "comment": 3,
+                    "filename": "src\\components\\Tinymce\\plugins.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 2,
+                    "comment": 2,
+                    "filename": "src\\components\\Tinymce\\toolbar.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 23,
+                    "comment": 5,
+                    "filename": "src\\components\\TreeTable\\eval.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 116,
+                    "comment": 8,
+                    "filename": "src\\components\\TreeTable\\index.vue"
+                },
+                {
+                    "blank": 19,
+                    "code": 70,
+                    "comment": 4,
+                    "filename": "src\\components\\TreeTable\\readme.md"
+                },
+                {
+                    "blank": 4,
+                    "code": 127,
+                    "comment": 1,
+                    "filename": "src\\components\\Upload\\singleImage.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 124,
+                    "comment": 0,
+                    "filename": "src\\components\\Upload\\singleImage2.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 151,
+                    "comment": 1,
+                    "filename": "src\\components\\Upload\\singleImage3.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 138,
+                    "comment": 8,
+                    "filename": "src\\components\\UploadExcel\\index.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 47,
+                    "comment": 3,
+                    "filename": "src\\directive\\clipboard\\clipboard.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 1,
+                    "filename": "src\\directive\\clipboard\\index.js"
+                },
+                {
+                    "blank": 14,
+                    "code": 56,
+                    "comment": 7,
+                    "filename": "src\\directive\\el-dragDialog\\drag.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 1,
+                    "filename": "src\\directive\\el-dragDialog\\index.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 1,
+                    "filename": "src\\directive\\permission\\index.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\directive\\permission\\permission.js"
+                },
+                {
+                    "blank": 13,
+                    "code": 72,
+                    "comment": 6,
+                    "filename": "src\\directive\\sticky.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 1,
+                    "filename": "src\\directive\\waves\\index.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "src\\directive\\waves\\waves.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 40,
+                    "comment": 3,
+                    "filename": "src\\directive\\waves\\waves.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 3,
+                    "filename": "src\\errorLog.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 50,
+                    "comment": 2,
+                    "filename": "src\\filters\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "src\\icons\\index.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\404.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\bug.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\chart.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\clipboard.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\component.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\dashboard.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\documentation.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\drag.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\edit.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\email.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\example.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\excel.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\eye.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\form.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\guide 2.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\guide.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\icon.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\international.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\language.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\link.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\list.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\lock.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\message.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\money.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\nested.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\password.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\people.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\peoples.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\qq.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\shopping.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\size.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\star.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\tab.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\table.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\theme.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\tree.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\user.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\wechat.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\icons\\svg\\zip.svg"
+                },
+                {
+                    "blank": 4,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\icons\\svgo.yml"
+                },
+                {
+                    "blank": 0,
+                    "code": 155,
+                    "comment": 0,
+                    "filename": "src\\lang\\en.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 23,
+                    "comment": 5,
+                    "filename": "src\\lang\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 188,
+                    "comment": 0,
+                    "filename": "src\\lang\\zh.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 30,
+                    "comment": 10,
+                    "filename": "src\\main.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 62,
+                    "comment": 0,
+                    "filename": "src\\mock\\article.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 7,
+                    "filename": "src\\mock\\index.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 42,
+                    "comment": 2,
+                    "filename": "src\\mock\\login.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\mock\\remoteSearch.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\mock\\transaction.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 53,
+                    "comment": 24,
+                    "filename": "src\\permission.js"
+                },
+                {
+                    "blank": 23,
+                    "code": 374,
+                    "comment": 25,
+                    "filename": "src\\router\\index.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 32,
+                    "comment": 1,
+                    "filename": "src\\router\\modules\\charts.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 92,
+                    "comment": 1,
+                    "filename": "src\\router\\modules\\components.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 62,
+                    "comment": 2,
+                    "filename": "src\\router\\modules\\nested.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 50,
+                    "comment": 1,
+                    "filename": "src\\router\\modules\\table.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\store\\getters.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\store\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 57,
+                    "comment": 0,
+                    "filename": "src\\store\\modules\\app.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "src\\store\\modules\\errorLog.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 49,
+                    "comment": 10,
+                    "filename": "src\\store\\modules\\permission.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 152,
+                    "comment": 0,
+                    "filename": "src\\store\\modules\\tagsView.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 138,
+                    "comment": 21,
+                    "filename": "src\\store\\modules\\user.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 83,
+                    "comment": 0,
+                    "filename": "src\\styles\\btn.scss"
+                },
+                {
+                    "blank": 11,
+                    "code": 66,
+                    "comment": 5,
+                    "filename": "src\\styles\\element-ui.scss"
+                },
+                {
+                    "blank": 29,
+                    "code": 162,
+                    "comment": 2,
+                    "filename": "src\\styles\\index.scss"
+                },
+                {
+                    "blank": 4,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "src\\styles\\mixin.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 117,
+                    "comment": 4,
+                    "filename": "src\\styles\\sidebar.scss"
+                },
+                {
+                    "blank": 8,
+                    "code": 35,
+                    "comment": 4,
+                    "filename": "src\\styles\\transition.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "src\\styles\\variables.scss"
+                },
+                {
+                    "blank": 6,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\utils\\auth.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "src\\utils\\clipboard.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 3,
+                    "filename": "src\\utils\\createUniqueString.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 2,
+                    "filename": "src\\utils\\i18n.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 112,
+                    "comment": 11,
+                    "filename": "src\\utils\\index.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 12,
+                    "comment": 9,
+                    "filename": "src\\utils\\openWindow.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 17,
+                    "comment": 5,
+                    "filename": "src\\utils\\permission.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 64,
+                    "comment": 15,
+                    "filename": "src\\utils\\request.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 4,
+                    "filename": "src\\utils\\validate.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 148,
+                    "comment": 20,
+                    "filename": "src\\vendor\\Blob.js"
+                },
+                {
+                    "blank": 22,
+                    "code": 169,
+                    "comment": 15,
+                    "filename": "src\\vendor\\Export2Excel.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 1,
+                    "filename": "src\\vendor\\Export2Zip.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\views\\charts\\keyboard.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\views\\charts\\line.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\views\\charts\\mixChart.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 42,
+                    "comment": 2,
+                    "filename": "src\\views\\clipboard\\index.vue"
+                },
+                {
+                    "blank": 7,
+                    "code": 199,
+                    "comment": 2,
+                    "filename": "src\\views\\commodity\\index.vue"
+                },
+                {
+                    "blank": 7,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\avatarUpload.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 147,
+                    "comment": 2,
+                    "filename": "src\\views\\components-demo\\backToTop.vue"
+                },
+                {
+                    "blank": 11,
+                    "code": 202,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\countTo.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\dndList.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 56,
+                    "comment": 2,
+                    "filename": "src\\views\\components-demo\\dragDialog.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 66,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\dragKanban.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\dropzone.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\jsonEditor.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\markdown.vue"
+                },
+                {
+                    "blank": 9,
+                    "code": 144,
+                    "comment": 1,
+                    "filename": "src\\views\\components-demo\\mixin.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\splitpane.vue"
+                },
+                {
+                    "blank": 8,
+                    "code": 120,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\sticky.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "src\\views\\components-demo\\tinymce.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 102,
+                    "comment": 3,
+                    "filename": "src\\views\\dashboard\\admin\\components\\BarChart.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 113,
+                    "comment": 0,
+                    "filename": "src\\views\\dashboard\\admin\\components\\BoxCard.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 150,
+                    "comment": 2,
+                    "filename": "src\\views\\dashboard\\admin\\components\\LineChart.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 135,
+                    "comment": 0,
+                    "filename": "src\\views\\dashboard\\admin\\components\\PanelGroup.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 81,
+                    "comment": 1,
+                    "filename": "src\\views\\dashboard\\admin\\components\\PieChart.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 116,
+                    "comment": 3,
+                    "filename": "src\\views\\dashboard\\admin\\components\\RaddarChart.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 309,
+                    "comment": 11,
+                    "filename": "src\\views\\dashboard\\admin\\components\\TodoList\\index.scss"
+                },
+                {
+                    "blank": 3,
+                    "code": 122,
+                    "comment": 1,
+                    "filename": "src\\views\\dashboard\\admin\\components\\TodoList\\index.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 78,
+                    "comment": 0,
+                    "filename": "src\\views\\dashboard\\admin\\components\\TodoList\\Todo.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "src\\views\\dashboard\\admin\\components\\TransactionTable.vue"
+                },
+                {
+                    "blank": 10,
+                    "code": 101,
+                    "comment": 0,
+                    "filename": "src\\views\\dashboard\\admin\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 51,
+                    "comment": 1,
+                    "filename": "src\\views\\dashboard\\editor\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "src\\views\\dashboard\\index.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 115,
+                    "comment": 1,
+                    "filename": "src\\views\\discount\\index.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "src\\views\\documentation\\index.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\views\\errorLog\\errorTestA.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 1,
+                    "filename": "src\\views\\errorLog\\errorTestB.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "src\\views\\errorLog\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 88,
+                    "comment": 0,
+                    "filename": "src\\views\\errorPage\\401.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 225,
+                    "comment": 0,
+                    "filename": "src\\views\\errorPage\\404.vue"
+                },
+                {
+                    "blank": 15,
+                    "code": 236,
+                    "comment": 8,
+                    "filename": "src\\views\\example\\components\\ArticleDetail.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\components\\Dropdown\\Comment.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\components\\Dropdown\\index.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\components\\Dropdown\\Platform.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\components\\Dropdown\\SourceUrl.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\components\\Warning.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\create.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\edit.vue"
+                },
+                {
+                    "blank": 13,
+                    "code": 114,
+                    "comment": 0,
+                    "filename": "src\\views\\example\\list.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 102,
+                    "comment": 0,
+                    "filename": "src\\views\\excel\\exportExcel.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 100,
+                    "comment": 0,
+                    "filename": "src\\views\\excel\\selectExcel.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "src\\views\\excel\\uploadExcel.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "src\\views\\guide\\defineSteps.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 2,
+                    "filename": "src\\views\\guide\\index.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 137,
+                    "comment": 1,
+                    "filename": "src\\views\\i18n-demo\\index.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "src\\views\\i18n-demo\\local.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 30,
+                    "comment": 1,
+                    "filename": "src\\views\\layout\\components\\AppMain.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\views\\layout\\components\\index.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 135,
+                    "comment": 1,
+                    "filename": "src\\views\\layout\\components\\Navbar.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "src\\views\\layout\\components\\Sidebar\\index.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "src\\views\\layout\\components\\Sidebar\\Item.vue"
+                },
+                {
+                    "blank": 10,
+                    "code": 93,
+                    "comment": 4,
+                    "filename": "src\\views\\layout\\components\\Sidebar\\SidebarItem.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 224,
+                    "comment": 5,
+                    "filename": "src\\views\\layout\\components\\TagsView.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 68,
+                    "comment": 0,
+                    "filename": "src\\views\\layout\\Layout.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "src\\views\\layout\\mixin\\ResizeHandler.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\views\\login\\authredirect.vue"
+                },
+                {
+                    "blank": 17,
+                    "code": 229,
+                    "comment": 21,
+                    "filename": "src\\views\\login\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 56,
+                    "comment": 11,
+                    "filename": "src\\views\\login\\socialsignin.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\views\\nested\\menu1\\index.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\views\\nested\\menu1\\menu1-1\\index.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\views\\nested\\menu1\\menu1-2\\index.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\views\\nested\\menu1\\menu1-2\\menu1-2-1\\index.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\views\\nested\\menu1\\menu1-2\\menu1-2-2\\index.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\views\\nested\\menu1\\menu1-3\\index.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\views\\nested\\menu2\\index.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "src\\views\\permission\\components\\SwitchRoles.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 67,
+                    "comment": 3,
+                    "filename": "src\\views\\permission\\directive.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "src\\views\\permission\\page.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 35,
+                    "comment": 2,
+                    "filename": "src\\views\\qiniu\\upload.vue"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\views\\redirect\\index.vue"
+                },
+                {
+                    "blank": 13,
+                    "code": 330,
+                    "comment": 5,
+                    "filename": "src\\views\\shop\\index.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 68,
+                    "comment": 0,
+                    "filename": "src\\views\\svg-icons\\index.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\views\\svg-icons\\requireIcons.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 91,
+                    "comment": 1,
+                    "filename": "src\\views\\tab\\components\\tabPane.vue"
+                },
+                {
+                    "blank": 3,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "src\\views\\tab\\index.vue"
+                },
+                {
+                    "blank": 10,
+                    "code": 346,
+                    "comment": 6,
+                    "filename": "src\\views\\table\\complexTable.vue"
+                },
+                {
+                    "blank": 15,
+                    "code": 134,
+                    "comment": 4,
+                    "filename": "src\\views\\table\\dragTable.vue"
+                },
+                {
+                    "blank": 6,
+                    "code": 52,
+                    "comment": 4,
+                    "filename": "src\\views\\table\\dynamicTable\\fixedThead.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "src\\views\\table\\dynamicTable\\index.vue"
+                },
+                {
+                    "blank": 4,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "src\\views\\table\\dynamicTable\\unfixedThead.vue"
+                },
+                {
+                    "blank": 12,
+                    "code": 115,
+                    "comment": 2,
+                    "filename": "src\\views\\table\\inlineEditTable.vue"
+                },
+                {
+                    "blank": 1,
+                    "code": 35,
+                    "comment": 12,
+                    "filename": "src\\views\\table\\treeTable\\customEval.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 128,
+                    "comment": 4,
+                    "filename": "src\\views\\table\\treeTable\\customTreeTable.vue"
+                },
+                {
+                    "blank": 5,
+                    "code": 120,
+                    "comment": 4,
+                    "filename": "src\\views\\table\\treeTable\\treeTable.vue"
+                },
+                {
+                    "blank": 11,
+                    "code": 90,
+                    "comment": 1,
+                    "filename": "src\\views\\theme\\index.vue"
+                },
+                {
+                    "blank": 8,
+                    "code": 106,
+                    "comment": 2,
+                    "filename": "src\\views\\user\\index.vue"
+                },
+                {
+                    "blank": 2,
+                    "code": 75,
+                    "comment": 0,
+                    "filename": "src\\views\\zip\\index.vue"
+                }
+            ]
+        }
+    ]
+}
