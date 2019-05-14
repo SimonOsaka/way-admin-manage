@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+/* eslint-disable */
 Vue.use(Router)
 
 /* Layout */
 import Layout from '@/views/layout/Layout'
 
 /* Router Modules */
-import componentsRouter from './modules/components'
-import chartsRouter from './modules/charts'
-import tableRouter from './modules/table'
-import nestedRouter from './modules/nested'
+// import componentsRouter from './modules/components'
+// import chartsRouter from './modules/charts'
+//import tableRouter from './modules/table'
+// import nestedRouter from './modules/nested'
 
 /** note: Submenu only appear when children.length>=1
  *  detail see  https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -74,7 +74,7 @@ export const constantRouterMap = [
         meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
       }
     ]
-  },
+  }/*,
   {
     path: '/documentation',
     component: Layout,
@@ -100,7 +100,7 @@ export const constantRouterMap = [
         meta: { title: 'guide', icon: 'guide', noCache: true }
       }
     ]
-  }
+  }*/
 ]
 
 export default new Router({
@@ -180,7 +180,27 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  {
+    path: '/abstractWord',
+    component: Layout,
+    redirect: '/abstractWord/index',
+    alwaysShow: true,
+    meta: {
+      title: 'abstractWord',
+      icon: 'tree'
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/abstractWord/index'),
+        name: 'abstractWordIndex',
+        meta: {
+          title: 'abstractWordIndex'
+        }
+      }
+    ]
+  },
+  /*
   {
     path: '/permission',
     component: Layout,
@@ -224,14 +244,14 @@ export const asyncRouterMap = [
         meta: { title: 'icons', icon: 'icon', noCache: true }
       }
     ]
-  },
+  },*/
 
   /** When your routing table is too long, you can split it into small modules**/
+  /*
   componentsRouter,
   chartsRouter,
   nestedRouter,
   tableRouter,
-
   {
     path: '/example',
     component: Layout,
@@ -413,7 +433,7 @@ export const asyncRouterMap = [
         meta: { title: 'externalLink', icon: 'link' }
       }
     ]
-  },
+  },*/
 
   { path: '*', redirect: '/404', hidden: true }
 ]
