@@ -68,7 +68,9 @@ export default {
     discount: '优惠管理',
     discountIndex: '优惠信息管理',
     user: '用户管理',
-    userLoginIndex: '注册用户管理'
+    userLoginIndex: '注册用户管理',
+    abstractWord: '抽象词',
+    abstractWordIndex: '抽象词管理'
   },
   navbar: {
     logOut: '退出登录',
