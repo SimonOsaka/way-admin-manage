@@ -40,7 +40,7 @@
             <el-input v-model="form.name"/>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">创建</el-button>
+            <el-button :loading="submitLoading" type="primary" @click="onSubmit">创建</el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -79,7 +79,8 @@ export default {
       selectedOption: [],
       cascaderDisabled: false,
       popoverVisiable: false,
-      newNodeName: ''
+      newNodeName: '',
+      submitLoading: false
     }
   },
   created() {
@@ -154,7 +155,9 @@ export default {
       this.form.pid = currentNodeId
       this.form.shopCateLeafId = this.selectedOption[this.selectedOption.length - 1]
       console.log(this.selectedOption)
+      this.submitLoading = true
       createAbstractWord(this.form).then(response => {
+        this.submitLoading = false
         this.form.name = ''
         queryAbstractWord({ pid: currentNodeId }).then(response => {
           const wordBo = response.data.commodityAbstractWordBo
@@ -180,6 +183,7 @@ export default {
           console.log(currentNode)
           this.$refs.tree.setCurrentNode(currentNode)
           this.$refs.tree.updateKeyChildren(currentNodeId, willUpdateChildren)
+          this.$refs.tree.setCurrentKey(currentNodeId)
 
           this.$message({
             message: '创建抽象词成功！',
@@ -188,6 +192,9 @@ export default {
         }, error => {
           console.error(error)
         })
+      }, error => {
+        this.submitLoading = false
+        console.error(error)
       })
     },
     onEdit() {
