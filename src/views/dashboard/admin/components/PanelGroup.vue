@@ -6,8 +6,8 @@
           <svg-icon icon-class="peoples" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">New Visits</div>
-          <count-to :start-val="0" :end-val="102400" :duration="2600" class="card-panel-num"/>
+          <div class="card-panel-text">总注册用户</div>
+          <count-to :start-val="0" :end-val="user.total" :duration="1000" class="card-panel-num"/>
         </div>
       </div>
     </el-col>
@@ -17,8 +17,8 @@
           <svg-icon icon-class="message" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">Messages</div>
-          <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num"/>
+          <div class="card-panel-text">总上线商家数</div>
+          <count-to :start-val="0" :end-val="shop.total" :duration="1000" class="card-panel-num"/>
         </div>
       </div>
     </el-col>
@@ -28,8 +28,8 @@
           <svg-icon icon-class="money" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">Purchases</div>
-          <count-to :start-val="0" :end-val="9280" :duration="3200" class="card-panel-num"/>
+          <div class="card-panel-text">总上架商品数</div>
+          <count-to :start-val="0" :end-val="commodity.total" :duration="1000" class="card-panel-num"/>
         </div>
       </div>
     </el-col>
@@ -49,14 +49,48 @@
 
 <script>
 import CountTo from 'vue-count-to'
+import { totalUsers, totalShops, totalCommodities } from '../../../../api/dashboard'
 
 export default {
   components: {
     CountTo
   },
+  data() {
+    return {
+      user: {
+        total: 0
+      },
+      shop: {
+        total: 0
+      },
+      commodity: {
+        total: 0
+      }
+    }
+  },
+  created() {
+    this.requestTotalUsers()
+    this.requestTotalShops()
+    this.requestTotalCommodities()
+  },
   methods: {
     handleSetLineChartData(type) {
       this.$emit('handleSetLineChartData', type)
+    },
+    requestTotalUsers() {
+      totalUsers().then(response => {
+        this.user.total = response.data.totalUsers
+      })
+    },
+    requestTotalShops() {
+      totalShops().then(response => {
+        this.shop.total = response.data.totalShops
+      })
+    },
+    requestTotalCommodities() {
+      totalCommodities().then(response => {
+        this.commodity.total = response.data.totalCommodities
+      })
     }
   }
 }
