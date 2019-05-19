@@ -70,7 +70,8 @@ export default {
     user: '用户管理',
     userLoginIndex: '注册用户管理',
     abstractWord: '抽象词',
-    abstractWordIndex: '抽象词管理'
+    abstractWordIndex: '抽象词管理',
+    userShopRelation: '关联商家'
   },
   navbar: {
     logOut: '退出登录',

@@ -177,6 +177,14 @@ export const asyncRouterMap = [
         meta: {
           title: 'userLoginIndex'
         }
+      },
+      {
+        path: 'userShopRelation',
+        component: () => import('@/views/user/userShopRelation'),
+        name: 'userShopRelation',
+        meta: {
+          title: 'userShopRelation'
+        }
       }
     ]
   },
