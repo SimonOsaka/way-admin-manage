@@ -205,6 +205,14 @@ export const asyncRouterMap = [
         meta: {
           title: 'abstractWordIndex'
         }
+      },
+      {
+        path: 'relationship',
+        component: () => import('@/views/abstractWord/relationship'),
+        name: 'abstractWordRelationship',
+        meta: {
+          title: 'abstractWordRelationship'
+        }
       }
     ]
   },

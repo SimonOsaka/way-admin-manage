@@ -71,7 +71,8 @@ export default {
     userLoginIndex: '注册用户管理',
     abstractWord: '抽象词',
     abstractWordIndex: '抽象词管理',
-    userShopRelation: '关联商家'
+    userShopRelation: '关联商家',
+    abstractWordRelationship: '抽象词关系'
   },
   navbar: {
     logOut: '退出登录',

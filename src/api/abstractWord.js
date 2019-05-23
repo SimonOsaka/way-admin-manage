@@ -31,3 +31,27 @@ export function deleteAbstractWord(params) {
     data: params
   })
 }
+
+export function queryAbstractWordByName(params) {
+  return request({
+    url: '/mp/commodity/abstractword/query',
+    method: 'post',
+    data: params
+  })
+}
+
+export function queryAbstractWordRelationship(params) {
+  return request({
+    url: '/mp/commodity/abstractword/relationship/list',
+    method: 'post',
+    data: params
+  })
+}
+
+export function saveAbstractWordRelationship(params) {
+  return request({
+    url: '/mp/commodity/abstractword/relationship/save',
+    method: 'post',
+    data: params
+  })
+}
