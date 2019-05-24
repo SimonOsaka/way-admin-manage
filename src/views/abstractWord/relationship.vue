@@ -68,7 +68,7 @@ export default {
     loadNode(node, resolve) {
       console.log(node)
       if (node.level === 0) {
-        return resolve([{ id: 0, name: '商家全部分类（点击创建根节点）', leaf: false }])
+        return resolve([{ id: 0, name: '抽象词树（点击创建根节点）', leaf: false }])
       }
       this.listQuery.pid = node.data.id
       this.getTreeNodes(resolve)
