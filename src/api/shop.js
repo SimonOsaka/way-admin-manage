@@ -95,3 +95,11 @@ export function queryShopLogList(params) {
     data: params
   })
 }
+
+export function queryAllShopStatus(params) {
+  return request({
+    url: '/mp/shop/allShopStatus',
+    method: 'post',
+    data: params
+  })
+}

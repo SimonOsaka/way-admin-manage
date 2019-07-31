@@ -23,3 +23,11 @@ export function queryCommodityLogList(params) {
     data: params
   })
 }
+
+export function queryAllCommodityStatus(params) {
+  return request({
+    url: '/mp/commodity/allCommodityStatus',
+    method: 'post',
+    data: params
+  })
+}

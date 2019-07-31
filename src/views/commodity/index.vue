@@ -2,9 +2,26 @@
   <div class="app-container">
 
     <div class="filter-container">
-      <el-input :placeholder="$t('commodity.commodityIdPlaceHolder')" v-model="listQuery.id" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
-      <el-input :placeholder="$t('commodity.shopIdPlaceHolder')" v-model="listQuery.shopId" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
-      <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('commodity.search') }}</el-button>
+      <el-row>
+        <el-col :span="5">
+          <el-input :placeholder="$t('commodity.commodityIdPlaceHolder')" v-model="listQuery.id" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
+        </el-col>
+        <el-col :span="5">
+          <el-input :placeholder="$t('commodity.shopIdPlaceHolder')" v-model="listQuery.shopId" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
+        </el-col>
+        <el-col :span="5">
+          <el-select v-model="listQuery.status" style="width: 200px;" clearable placeholder="商品状态">
+            <el-option
+              v-for="item in commodityStatusOptions"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"/>
+          </el-select>
+        </el-col>
+        <el-col :span="5">
+          <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('commodity.search') }}</el-button>
+        </el-col>
+      </el-row>
     </div>
 
     <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
@@ -50,7 +67,7 @@
 </template>
 
 <script>
-import { queryCommodity, modifyCommodityStatus, queryCommodityLogList } from '@/api/commodity'
+import { queryCommodity, modifyCommodityStatus, queryCommodityLogList, queryAllCommodityStatus } from '@/api/commodity'
 import waves from '@/directive/waves' // 水波纹指令
 import galleryPreview from '@/components/ImagePreview/galleryPreview'
 
@@ -70,10 +87,12 @@ export default {
       listQuery: {
         id: '',
         shopId: '',
+        status: undefined,
         pageNum: 1,
         pageSize: 20
       },
       commodityStatusMap: {},
+      commodityStatusOptions: [],
       tableData: [],
       commodityLog: {
         logLoading: false,
@@ -84,7 +103,21 @@ export default {
     }
   },
   created() {
-    this.getList()
+    queryAllCommodityStatus().then(response => {
+      this.commodityStatusMap = response.data.commodityStatusMap
+      for (const commodityStatusKey in this.commodityStatusMap) {
+        if (this.commodityStatusMap.hasOwnProperty(commodityStatusKey)) {
+          const commodityStatusValue = this.commodityStatusMap[commodityStatusKey]
+          this.commodityStatusOptions.push({
+            value: commodityStatusKey,
+            label: commodityStatusValue
+          })
+        }
+      }
+      const commodityStatusDefault = response.data.commodityStatusDefault
+      this.listQuery.status = commodityStatusDefault
+      this.getList()
+    })
   },
   destroyed() {},
   methods: {
@@ -113,7 +146,6 @@ export default {
             }
           })
         }
-        this.commodityStatusMap = response.data.commodityStatusMap
         this.total = response.data.commodityTotal
         this.listLoading = false
       }, error => {

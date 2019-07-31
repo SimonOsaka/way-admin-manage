@@ -2,10 +2,26 @@
   <div class="app-container">
 
     <div class="filter-container">
-      <el-input :placeholder="$t('shop.shopIdPlaceHolder')" v-model="listQuery.id" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
-      <el-input :placeholder="$t('shop.shopNamePlaceholder')" v-model="listQuery.shopName" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
-      <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('shop.search') }}</el-button>
-
+      <el-row>
+        <el-col :span="5">
+          <el-input :placeholder="$t('shop.shopIdPlaceHolder')" v-model="listQuery.id" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
+        </el-col>
+        <el-col :span="5">
+          <el-input :placeholder="$t('shop.shopNamePlaceholder')" v-model="listQuery.shopName" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
+        </el-col>
+        <el-col :span="5">
+          <el-select v-model="listQuery.shopStatus" style="width: 200px;" clearable placeholder="商家状态">
+            <el-option
+              v-for="item in shopStatusOptions"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"/>
+          </el-select>
+        </el-col>
+        <el-col :span="5">
+          <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">{{ $t('shop.search') }}</el-button>
+        </el-col>
+      </el-row>
       <el-checkbox-group v-model="checkboxVal">
         <el-checkbox label="shopAddress">商家地址</el-checkbox>
         <el-checkbox label="shopTel">商家电话</el-checkbox>
@@ -30,7 +46,7 @@
               <span>{{ scope.row.wayShopCateLeaf.cateName }}</span>
             </el-form-item>
             <el-form-item label="商家资质">
-              <el-button v-if="scope.row['wayShopQualification']" type="text" @click="handleQualify(scope.row['wayShopQualification'])">查看资质</el-button>
+              <el-button v-if="scope.row['wayShopQualification']" type="text" @click="handleQualify(scope.row['wayShopQualification'], scope.row.wayShopExtra)">查看资质</el-button>
               <span v-else style="color: red;">无资质</span>
             </el-form-item>
           </el-form>
@@ -55,12 +71,15 @@
       </el-table-column>
       <el-table-column align="center" label="操作" width="180" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button-group>
+          <el-button-group v-if="scope.row.wayShopExtra.ownerType !== 0">
             <el-button v-if="scope.row.isDeleted === 2" size="mini" type="primary" @click="handleModifyStatus(scope.row, 5)">通过</el-button>
             <el-button v-if="scope.row.isDeleted === 2 || scope.row.isDeleted === 4" size="mini" type="warning" @click="handleReject(scope.row, 3)">驳回</el-button>
             <el-button v-if="scope.row.isDeleted === 0" size="mini" type="info" @click="handleModifyStatus(scope.row, 4)">下线</el-button>
             <el-button v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0" size="mini" type="danger" @click="handleModifyStatus(scope.row, 1)">删除</el-button>
             <el-button size="mini" @click="handleShopLogDetail(scope.row)">日志</el-button>
+          </el-button-group>
+          <el-button-group v-else>
+            <el-button v-if="scope.row['wayShopQualification']" type="text" @click="handleQualify(scope.row['wayShopQualification'], scope.row.wayShopExtra)">检查资质</el-button>
           </el-button-group>
         </template>
       </el-table-column>
@@ -113,6 +132,14 @@
             <image-preview v-if="qualification.other5Url" :src="qualification.other5Url"/>
           </el-col>
         </el-row>
+        <el-row v-if="shopExtra.ownerType === 0">
+          <el-col :span="12">
+            <el-button size="mini" type="danger" style="width: 80px;" @click="handleChangeOwner(shopExtra.id)">商家创建</el-button>
+          </el-col>
+          <el-col :span="12">
+            <el-button size="mini" type="warning" style="width: 80px;" @click="handleChangeManager(shopExtra.id)">管理创建</el-button>
+          </el-col>
+        </el-row>
       </div>
     </el-dialog>
 
@@ -123,8 +150,9 @@
 </template>
 
 <script>
-import { queryShopList, modifyShopStatus, queryShopLogList } from '@/api/shop'
+import { queryShopList, modifyShopStatus, queryShopLogList, queryAllShopStatus } from '@/api/shop'
 import { getShopQualification } from '@/api/qualification'
+import { changeOwnerToSelf, changeOwnerToManager } from '@/api/shopExtra'
 import waves from '@/directive/waves' // 水波纹指令
 import imagePreview from '@/components/ImagePreview/imagePreview'
 const defaultFormThead = ['shopAddress', 'shopTel', 'shopBusinessTime']
@@ -146,9 +174,11 @@ export default {
         pageNum: 1,
         pageSize: 20,
         shopName: undefined,
+        shopStatus: undefined,
         id: undefined
       },
       shopStatusMap: {},
+      shopStatusOptions: [],
       tableData: [],
       key: 1, // table key
       formTheadOptions: [
@@ -181,6 +211,11 @@ export default {
         other4Url: '',
         other5Url: ''
       },
+      shopExtra: {
+        id: '',
+        ownerType: ''
+      },
+      rowShopExtra: {},
       logoStyle: 'width: 64px; height: 64px; border: none;'
     }
   },
@@ -193,7 +228,21 @@ export default {
     }
   },
   created() {
-    this.getList()
+    queryAllShopStatus().then(response => {
+      this.shopStatusMap = response.data.shopStatusMap
+      for (const shopStatusKey in this.shopStatusMap) {
+        if (this.shopStatusMap.hasOwnProperty(shopStatusKey)) {
+          const shopStatusValue = this.shopStatusMap[shopStatusKey]
+          this.shopStatusOptions.push({
+            value: shopStatusKey,
+            label: shopStatusValue
+          })
+        }
+      }
+      const shopStatusDefault = response.data.shopStatusDefault
+      this.listQuery.shopStatus = shopStatusDefault
+      this.getList()
+    })
   },
   destroyed() {},
   methods: {
@@ -201,7 +250,6 @@ export default {
       this.listLoading = true
       queryShopList(this.listQuery).then(response => {
         this.list = response.data.shopBoList
-        this.shopStatusMap = response.data.shopStatusMap
         this.total = response.data.shopBoTotal
 
         this.listLoading = false
@@ -293,9 +341,9 @@ export default {
         console.error(error)
       })
     },
-    handleQualify(q) {
+    handleQualify(q, rowShopExtra) {
       console.log(q)
-      getShopQualification({ id: q['id'] }).then(response => {
+      getShopQualification({ id: q['id'], shopExtraId: rowShopExtra.id }).then(response => {
         const data = response.data
         if (!data['shopQualificationBo']) {
           return
@@ -312,7 +360,59 @@ export default {
         this.qualification.other3Url = shopQualificationBo.other3ImgUrl
         this.qualification.other4Url = shopQualificationBo.other4ImgUrl
         this.qualification.other5Url = shopQualificationBo.other5ImgUrl
+
+        if (!data['shopExtraBo']) {
+          return
+        }
+        const shopExtraBo = data['shopExtraBo']
+        this.shopExtra.id = shopExtraBo.id
+        this.shopExtra.ownerType = shopExtraBo.ownerType
+
+        this.rowShopExtra = rowShopExtra
+
         this.qualification.dialogVisible = true
+      })
+    },
+    handleChangeOwner(shopExtraId) {
+      this.$confirm('确认执行“商家创建”操作?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        changeOwnerToSelf({ id: shopExtraId }).then(response => {
+          this.$message({
+            type: 'success',
+            message: '设置“商家创建”成功!'
+          })
+          this.rowShopExtra.ownerType = 1
+          this.shopExtra.ownerType = 1
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消执行'
+        })
+      })
+    },
+    handleChangeManager(shopExtraId) {
+      this.$confirm('请先检查资质是否完整。管理创建：此商家信息由公司员工自行创建，资质图片显示未上传。确认执行“管理创建”操作?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        changeOwnerToManager({ id: shopExtraId }).then(response => {
+          this.$message({
+            type: 'success',
+            message: '设置“管理创建”成功!'
+          })
+          this.rowShopExtra.ownerType = 2
+          this.shopExtra.ownerType = 2
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消执行'
+        })
       })
     }
   }
