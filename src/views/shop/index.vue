@@ -132,12 +132,12 @@
             <image-preview v-if="qualification.other5Url" :src="qualification.other5Url"/>
           </el-col>
         </el-row>
-        <el-row v-if="shopExtra.ownerType === 0">
+        <el-row>
           <el-col :span="12">
-            <el-button size="mini" type="danger" style="width: 80px;" @click="handleChangeOwner(shopExtra.id)">商家创建</el-button>
+            <el-button v-if="shopExtra.ownerType === 0 || shopExtra.ownerType === 2" size="mini" type="danger" style="width: 80px;" @click="handleChangeOwner(shopExtra.id)">商家创建</el-button>
           </el-col>
           <el-col :span="12">
-            <el-button size="mini" type="warning" style="width: 80px;" @click="handleChangeManager(shopExtra.id)">管理创建</el-button>
+            <el-button v-if="shopExtra.ownerType === 0 || shopExtra.ownerType === 1" size="mini" type="warning" style="width: 80px;" @click="handleChangeManager(shopExtra.id)">管理创建</el-button>
           </el-col>
         </el-row>
       </div>
