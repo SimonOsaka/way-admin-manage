@@ -1,5 +1,5 @@
 module.exports = {
   NODE_ENV: '"production"',
   ENV_CONFIG: '"prod"',
-  BASE_API: '"http://api.jicu.vip"'
+  BASE_API: '"https://api.jicu.vip"'
 }
