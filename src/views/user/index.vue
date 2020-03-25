@@ -16,7 +16,7 @@
       <el-table-column prop="createTime" label="用户注册时间" class-name="small-padding fixed-width"/>
       <el-table-column align="center" label="操作" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button v-if="scope.row.isUsed === 0" size="mini" type="danger" @click="handleDisable(scope.row)">禁用</el-button>
+          <el-button v-if="scope.row.isUsed === 0" size="mini" type="text" plain @click="handleDisable(scope.row)">禁用</el-button>
         </template>
       </el-table-column>
     </el-table>

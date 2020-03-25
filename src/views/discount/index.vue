@@ -26,7 +26,7 @@
       <el-table-column prop="shopPosition" label="商家地址"/>
       <el-table-column align="center" label="操作" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button v-if="scope.row.isDeleted === 0" size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
+          <el-button v-if="scope.row.isDeleted === 0" size="mini" type="text" plain @click="handleDelete(scope.row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>

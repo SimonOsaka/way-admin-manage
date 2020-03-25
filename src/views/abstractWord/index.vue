@@ -30,7 +30,7 @@
               <el-input v-model="newNodeName"/>
               <div style="text-align: right; margin: 0">
                 <el-button size="mini" type="text" @click="popoverVisiable = false">取消</el-button>
-                <el-button type="primary" size="mini" @click="onEdit">确定</el-button>
+                <el-button type="primary" size="mini" plain @click="onEdit">确定</el-button>
               </div>
               <el-button slot="reference" type="text">修改名称</el-button>
             </el-popover>
@@ -40,7 +40,7 @@
             <el-input v-model="form.name"/>
           </el-form-item>
           <el-form-item>
-            <el-button :loading="submitLoading" type="primary" @click="onSubmit">创建</el-button>
+            <el-button :loading="submitLoading" type="primary" plain @click="onSubmit">创建</el-button>
           </el-form-item>
         </el-form>
       </el-col>

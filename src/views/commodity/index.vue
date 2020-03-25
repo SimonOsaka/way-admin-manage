@@ -35,18 +35,28 @@
       <!-- <el-table-column prop="price" align="center" label="商品价格" width="100"/> -->
       <el-table-column align="center" label="商品状态" width="100" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-tag>{{ commodityStatusMap[scope.row.isDeleted] }}</el-tag>
+          <el-tag effect="plain">{{ commodityStatusMap[scope.row.isDeleted] }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column align="center" label="操作" width="270" class-name="small-padding fixed-width">
+      <el-table-column align="center" label="操作" width="100" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button-group>
-            <el-button v-if="scope.row.isDeleted === 2" size="mini" type="primary" @click="handleModifyStatus(scope.row, 5)">通过</el-button>
-            <el-button v-if="scope.row.isDeleted === 2" size="mini" type="warning" @click="handleReject(scope.row, 3)">驳回</el-button>
-            <el-button v-if="scope.row.isDeleted === 0" size="mini" type="info" @click="handleModifyStatus(scope.row, 4)">下架</el-button>
-            <el-button v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0" size="mini" type="danger" @click="handleModifyStatus(scope.row, 1)">删除</el-button>
-            <el-button size="mini" @click="handleCommodityLogDetail(scope.row)">日志</el-button>
-          </el-button-group>
+          <div>
+            <div v-if="scope.row.isDeleted === 2">
+              <el-button size="mini" type="text" plain @click="handleModifyStatus(scope.row, 5)">通过</el-button>
+            </div>
+            <div v-if="scope.row.isDeleted === 2">
+              <el-button size="mini" type="text" plain @click="handleReject(scope.row, 3)">驳回</el-button>
+            </div>
+            <div v-if="scope.row.isDeleted === 0">
+              <el-button size="mini" type="text" plain @click="handleModifyStatus(scope.row, 4)">下架</el-button>
+            </div>
+            <div v-if="scope.row.isDeleted !== 1 && scope.row.isDeleted !== 0">
+              <el-button size="mini" type="text" plain @click="handleModifyStatus(scope.row, 1)">删除</el-button>
+            </div>
+            <div>
+              <el-button size="mini" type="text" plain @click="handleCommodityLogDetail(scope.row)">日志</el-button>
+            </div>
+          </div>
         </template>
       </el-table-column>
     </el-table>

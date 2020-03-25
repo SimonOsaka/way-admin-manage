@@ -11,7 +11,7 @@
     </el-row>
     <el-row>
       <el-col :span="2" :push="11">
-        <el-button :loading="loading" type="primary" @click="handleBtnSubmit">提交</el-button>
+        <el-button :loading="loading" type="primary" plain @click="handleBtnSubmit">提交</el-button>
       </el-col>
     </el-row>
   </div>

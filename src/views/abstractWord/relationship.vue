@@ -28,7 +28,7 @@
             :label="item.label"
             :value="item.value"/>
         </el-select>
-        <el-button :loading="submitLoading" type="primary" @click="onSubmit">保存</el-button>
+        <el-button :loading="submitLoading" type="primary" plain @click="onSubmit">保存</el-button>
       </el-col>
     </el-row>
   </div>
