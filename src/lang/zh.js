@@ -48,6 +48,8 @@ export default {
     createArticle: '创建文章',
     editArticle: '编辑文章',
     articleList: '文章列表',
+    detailArticle: '文章详情',
+    article: '文章管理',
     errorPages: '错误页面',
     page401: '401',
     page404: '404',

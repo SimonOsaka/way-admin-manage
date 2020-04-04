@@ -216,6 +216,33 @@ export const asyncRouterMap = [
       }
     ]
   },
+
+  {
+    path: '/article',
+    component: Layout,
+    redirect: '/article/list',
+    alwaysShow: true,
+    name: 'article',
+    meta: {
+      title: 'article',
+      icon: 'documentation'
+    },
+    children: [
+      {
+        path: 'detail/:id(\\d+)',
+        component: () => import('@/views/article/detail'),
+        name: 'detailArticle',
+        meta: { title: 'detailArticle', noCache: true },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/article/list'),
+        name: 'articleList',
+        meta: { title: 'articleList', icon: 'list' }
+      }
+    ]
+  },
   /*
   {
     path: '/permission',
