@@ -2,40 +2,23 @@ import request from '@/utils/request'
 
 export function fetchList(query) {
   return request({
-    url: '/article/list',
+    url: '/mp/article',
     method: 'get',
     params: query
   })
 }
 
-export function fetchArticle(id) {
+export function fetchArticle(postId) {
   return request({
-    url: '/article/detail',
-    method: 'get',
-    params: { id }
+    url: '/mp/article/' + postId,
+    method: 'get'
   })
 }
 
-export function fetchPv(pv) {
+export function auditArticle(data) {
   return request({
-    url: '/article/pv',
-    method: 'get',
-    params: { pv }
-  })
-}
-
-export function createArticle(data) {
-  return request({
-    url: '/article/create',
-    method: 'post',
-    data
-  })
-}
-
-export function updateArticle(data) {
-  return request({
-    url: '/article/update',
-    method: 'post',
+    url: '/mp/article/audit/' + data.postId,
+    method: 'put',
     data
   })
 }
